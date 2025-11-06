@@ -1,6 +1,6 @@
 // Types for the Tic-Tac-Toe game optimized for AI understanding
 
-export type Player = 'X' | 'O';
+export type Player = "X" | "O";
 export type CellValue = Player | null;
 export type BoardState = CellValue[];
 
@@ -15,9 +15,10 @@ export type BoardState = CellValue[];
 export interface GameState {
   board: BoardState;
   currentPlayer: Player;
-  gameStatus: 'playing' | 'won' | 'draw';
+  gameStatus: "playing" | "won" | "draw";
   winner: Player | null;
   winningLine: number[] | null; // positions that form the winning line
+  difficulty: "easy" | "medium" | "hard";
 }
 
 export interface Move {
