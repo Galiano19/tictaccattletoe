@@ -1,6 +1,6 @@
 "use client";
 
-import { CellValue } from "../types/game";
+import { CellValue } from "../../types/game";
 import styles from "./GameBoard.module.css";
 
 interface GameBoardProps {

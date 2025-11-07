@@ -16,42 +16,55 @@ export function opponentMove(
     return;
   }
 
+  let moveWasMade = false;
+
   // Check for winning moves
   for (const combination of WINNING_COMBINATIONS) {
     const winAttempted = winningMove(combination, gameState, setGameState);
     if (winAttempted) {
-      checkGameCompletion(gameState, setGameState);
-
-      return;
+      moveWasMade = true;
+      break;
     }
   }
 
   // Check for blocking moves (prevent player from winning)
-  for (const combination of WINNING_COMBINATIONS) {
-    const blockAttempted = blockingMove(combination, gameState, setGameState);
-    if (blockAttempted) {
-      checkGameCompletion(gameState, setGameState);
-
-      return;
+  if (!moveWasMade) {
+    for (const combination of WINNING_COMBINATIONS) {
+      const blockAttempted = blockingMove(combination, gameState, setGameState);
+      if (blockAttempted) {
+        moveWasMade = true;
+        break;
+      }
     }
   }
 
   // Check for developing moves
-  for (const combination of WINNING_COMBINATIONS) {
-    const developAttempted = developingMove(
-      combination,
-      gameState,
-      setGameState
-    );
-    if (developAttempted) {
-      checkGameCompletion(gameState, setGameState);
-
-      return;
+  if (!moveWasMade) {
+    for (const combination of WINNING_COMBINATIONS) {
+      const developAttempted = developingMove(
+        combination,
+        gameState,
+        setGameState
+      );
+      if (developAttempted) {
+        moveWasMade = true;
+        break;
+      }
     }
   }
 
   // If no strategic move found, pick a random available position
-  randomMove(availablePositions, gameState, setGameState);
+  if (!moveWasMade) {
+    randomMove(availablePositions, gameState, setGameState);
+  }
+
+  // Check for game completion after the opponent's move
+  setTimeout(() => {
+    setGameState((currentState) => {
+      checkGameCompletion(currentState, setGameState);
+      return currentState;
+    });
+  }, 0);
 }
 
 export function randomMove(
@@ -63,10 +76,6 @@ export function randomMove(
   const position = availablePositions[randomIndex];
   const newBoard = [...gameState.board];
   newBoard[position] = "O";
-
-  if (checkGameCompletion(gameState, setGameState)) {
-    return;
-  }
 
   setGameState({
     ...gameState,
