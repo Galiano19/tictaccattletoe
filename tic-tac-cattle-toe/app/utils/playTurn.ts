@@ -15,6 +15,10 @@ export function playTurn({
 }: PlayTurnParams) {
   playerMove(position, gameState, setGameState);
 
+  if (gameState.gameStatus !== "playing") {
+    return;
+  }
+
   // Delay opponent move to allow React to re-render with player's move first
   setTimeout(() => {
     setGameState((currentState) => {

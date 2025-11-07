@@ -1,4 +1,5 @@
 import { GameState } from "../types/game";
+import { checkGameCompletion } from "./gameOver";
 
 export function playerMove(
   position: number,
@@ -7,6 +8,10 @@ export function playerMove(
 ) {
   const newBoard = [...gameState.board];
   newBoard[position] = "X";
+
+  if (checkGameCompletion(gameState, setGameState)) {
+    return;
+  }
 
   setGameState({
     ...gameState,

@@ -1,10 +1,10 @@
-import { GameState } from "@/app/types/game";
+import { BoardState, GameState } from "@/app/types/game";
 import { developingMove } from "@/app/utils/developingMove";
 
 describe("developingMove", () => {
   let mockSetGameState: jest.Mock;
 
-  const createGameState = (board: ("X" | "O" | null)[]): GameState => ({
+  const createGameState = (board: BoardState): GameState => ({
     board,
     currentPlayer: "O",
     gameStatus: "playing",

@@ -1,6 +1,7 @@
 import { GameState, WINNING_COMBINATIONS } from "../types/game";
 import { blockingMove } from "./blockingMove";
 import { developingMove } from "./developingMove";
+import { checkGameCompletion } from "./gameOver";
 import { winningMove } from "./winningMove";
 
 export function opponentMove(
@@ -19,6 +20,8 @@ export function opponentMove(
   for (const combination of WINNING_COMBINATIONS) {
     const winAttempted = winningMove(combination, gameState, setGameState);
     if (winAttempted) {
+      checkGameCompletion(gameState, setGameState);
+
       return;
     }
   }
@@ -27,6 +30,8 @@ export function opponentMove(
   for (const combination of WINNING_COMBINATIONS) {
     const blockAttempted = blockingMove(combination, gameState, setGameState);
     if (blockAttempted) {
+      checkGameCompletion(gameState, setGameState);
+
       return;
     }
   }
@@ -39,6 +44,8 @@ export function opponentMove(
       setGameState
     );
     if (developAttempted) {
+      checkGameCompletion(gameState, setGameState);
+
       return;
     }
   }
@@ -56,6 +63,11 @@ export function randomMove(
   const position = availablePositions[randomIndex];
   const newBoard = [...gameState.board];
   newBoard[position] = "O";
+
+  if (checkGameCompletion(gameState, setGameState)) {
+    return;
+  }
+
   setGameState({
     ...gameState,
     board: newBoard,
