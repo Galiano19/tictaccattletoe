@@ -1,22 +1,22 @@
 "use client";
 
-import { CellValue } from "../../types/game";
+import { useGameState } from "@/app/providers/GameStateProvider";
 import styles from "./GameBoard.module.css";
 
 interface GameBoardProps {
-  board: CellValue[];
   onCellClick: (position: number) => void;
   disabled?: boolean;
 }
 
 export default function GameBoard({
-  board,
   onCellClick,
   disabled = false,
 }: GameBoardProps) {
+  const { gameState } = useGameState();
+
   return (
     <div className={styles.gameBoard}>
-      {board.map((cell, index) => (
+      {gameState.board.map((cell, index) => (
         <button
           key={index}
           className={styles.cell}

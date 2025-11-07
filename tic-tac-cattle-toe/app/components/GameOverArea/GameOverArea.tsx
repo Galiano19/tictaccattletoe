@@ -1,15 +1,9 @@
-import { GameState } from "@/app/types/game";
+import { useGameState } from "@/app/providers/GameStateProvider";
 import { resetGame } from "@/app/utils/resetGame";
 
-interface GameOverAreaProps {
-  gameState: GameState;
-  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
-}
+export default function GameOverArea() {
+  const { gameState, setGameState } = useGameState();
 
-export default function GameOverArea({
-  gameState,
-  setGameState,
-}: GameOverAreaProps) {
   const handleResetGame = () => {
     resetGame({ setGameState });
   };
@@ -27,7 +21,7 @@ export default function GameOverArea({
   if (gameState.gameStatus === "draw") {
     return (
       <div>
-        <h2>It's a Draw!</h2>
+        <h2>It&apos;s a Draw!</h2>
         <p>No one wins this time.</p>
         <p>Make sure to pet the Cattle.</p>
         <button onClick={handleResetGame}>Reset Game</button>

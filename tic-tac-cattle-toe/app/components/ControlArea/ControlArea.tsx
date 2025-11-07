@@ -1,11 +1,9 @@
-import { GameState, INITIAL_BOARD } from "@/app/types/game";
+import { useGameState } from "@/app/providers/GameStateProvider";
 import { resetGame } from "@/app/utils/resetGame";
 
-interface ControlAreaProps {
-  setGameState: React.Dispatch<React.SetStateAction<GameState>>;
-}
+export default function ControlArea() {
+  const { setGameState } = useGameState();
 
-export default function ControlArea({ setGameState }: ControlAreaProps) {
   const handleResetGame = () => {
     resetGame({ setGameState });
   };
