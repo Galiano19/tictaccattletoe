@@ -7,9 +7,7 @@ import GameArea from "./components/GameArea/GameArea";
 function GameContent() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <GameArea />
-      </main>
+      <GameArea />
     </div>
   );
 }

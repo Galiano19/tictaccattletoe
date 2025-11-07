@@ -13,7 +13,7 @@ export default function GameArea() {
   };
 
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.wrapper}>
       <GameOverArea />
       <GameBoard
         onCellClick={handleCellClick}
