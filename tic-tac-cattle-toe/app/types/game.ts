@@ -4,8 +4,7 @@ export type Player = "X" | "O";
 export type CellValue = Player | null;
 export type BoardState = CellValue[];
 
-// AI-friendly board representation: 0-8 positions in a flat array
-// Board positions:
+// board representation: 0-8 positions in a flat array
 // 0 | 1 | 2
 // ---------
 // 3 | 4 | 5
@@ -15,7 +14,7 @@ export type BoardState = CellValue[];
 export interface GameState {
   board: BoardState;
   currentPlayer: Player;
-  gameStatus: "playing" | "won" | "draw";
+  gameStatus: "playing" | "over" | "draw";
   winner: Player | null;
   winningLine: number[] | null; // positions that form the winning line
   difficulty: "easy" | "medium" | "hard";
