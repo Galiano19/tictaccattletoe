@@ -15,7 +15,7 @@ export default function GameBoard({
   const { gameState } = useGameState();
 
   return (
-    <div className={styles.gameBoard}>
+    <div className={styles.wrapper}>
       {gameState.board.map((cell, index) => (
         <button
           key={index}
