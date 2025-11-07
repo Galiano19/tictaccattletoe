@@ -1,6 +1,7 @@
 import { GameState } from "../types/game";
 import { opponentMove } from "./opponentMove";
 import { playerMove } from "./playerMove";
+import { checkGameCompletion } from "./gameOver";
 
 interface PlayTurnParams {
   position: number;
@@ -15,20 +16,23 @@ export function playTurn({
 }: PlayTurnParams) {
   playerMove(position, gameState, setGameState);
 
-  if (gameState.gameStatus !== "playing") {
-    return;
-  }
-
-  // Delay opponent move to allow React to re-render with player's move first
+  // Delay opponent move to ensure state is updated
   setTimeout(() => {
     setGameState((currentState) => {
+      const gameEnded = checkGameCompletion(currentState, setGameState);
+
+      if (gameEnded) {
+        return currentState;
+      }
+
       if (
         currentState.currentPlayer === "O" &&
         currentState.gameStatus === "playing"
       ) {
         opponentMove(currentState, setGameState);
       }
+
       return currentState;
     });
-  }, 500);
+  }, 100);
 }
