@@ -1,23 +1,7 @@
-import { GameState, WINNING_COMBINATIONS } from "./types/game";
-import { blockingMove } from "./utils/blockingMove";
-import { developingMove } from "./utils/developingMove";
-import { winningMove } from "./utils/winningMove";
-
-// Player logic
-export function playerMove(
-  position: number,
-  gameState: GameState,
-  setGameState: React.Dispatch<React.SetStateAction<GameState>>
-) {
-  const newBoard = [...gameState.board];
-  newBoard[position] = "X";
-
-  setGameState({
-    ...gameState,
-    board: newBoard,
-    currentPlayer: "O",
-  });
-}
+import { GameState, WINNING_COMBINATIONS } from "../types/game";
+import { blockingMove } from "./blockingMove";
+import { developingMove } from "./developingMove";
+import { winningMove } from "./winningMove";
 
 export function opponentMove(
   gameState: GameState,
