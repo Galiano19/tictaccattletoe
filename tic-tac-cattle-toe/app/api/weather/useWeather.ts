@@ -35,7 +35,7 @@ async function fetchWeather(lat: string, lon: string): Promise<WeatherData> {
   }
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`
   );
 
   if (!response.ok) {
