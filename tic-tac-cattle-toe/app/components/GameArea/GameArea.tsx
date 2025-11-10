@@ -5,6 +5,7 @@ import styles from "./GameArea.module.css";
 import { playTurn } from "@/app/utils/playTurn";
 import ControlArea from "../ControlArea/ControlArea";
 import Cattle from "../Cattle/Cattle";
+import WeatherInfo from "../WeatherInfo/WeatherInfo";
 
 export default function GameArea() {
   const { gameState, setGameState } = useGameState();
@@ -22,6 +23,7 @@ export default function GameArea() {
         disabled={gameState.gameStatus !== "playing"}
       />
       <Cattle />
+      <WeatherInfo />
     </div>
   );
 }
