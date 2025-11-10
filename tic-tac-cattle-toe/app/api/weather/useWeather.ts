@@ -26,17 +26,9 @@ interface OpenWeatherResponse {
   };
 }
 
-// Function to fetch weather data from OpenWeatherMap API
+// Function to fetch weather data from internal API route
 async function fetchWeather(lat: string, lon: string): Promise<WeatherData> {
-  const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
-
-  if (!apiKey) {
-    throw new Error("Weather API key is not configured");
-  }
-
-  const response = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`
-  );
+  const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
 
   if (!response.ok) {
     throw new Error(`Failed to fetch weather: ${response.statusText}`);
