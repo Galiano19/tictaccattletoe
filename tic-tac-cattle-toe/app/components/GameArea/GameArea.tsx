@@ -4,6 +4,7 @@ import GameOverArea from "../GameOverArea/GameOverArea";
 import styles from "./GameArea.module.css";
 import { playTurn } from "@/app/utils/playTurn";
 import ControlArea from "../ControlArea/ControlArea";
+import Cattle from "../Cattle/Cattle";
 
 export default function GameArea() {
   const { gameState, setGameState } = useGameState();
@@ -15,11 +16,12 @@ export default function GameArea() {
   return (
     <div className={styles.wrapper}>
       <GameOverArea />
+      <ControlArea />
       <GameBoard
         onCellClick={handleCellClick}
         disabled={gameState.gameStatus !== "playing"}
       />
-      <ControlArea />
+      <Cattle />
     </div>
   );
 }
