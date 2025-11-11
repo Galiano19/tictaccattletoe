@@ -1,5 +1,5 @@
-import { BoardState, GameState } from "@/app/types/game";
-import { developingMove } from "@/app/utils/developingMove";
+import { BoardState, GameState } from "@/lib/types/game";
+import { developingMove } from "@/lib/utils/developingMove";
 
 describe("developingMove", () => {
   let mockSetGameState: jest.Mock;

@@ -1,5 +1,5 @@
-import { BoardState, GameState, WINNING_COMBINATIONS } from "@/app/types/game";
-import { winningMove } from "@/app/utils/winningMove";
+import { BoardState, GameState, WINNING_COMBINATIONS } from "@/lib/types/game";
+import { winningMove } from "@/lib/utils/winningMove";
 
 describe("winningMove", () => {
   let mockSetGameState: jest.Mock;
