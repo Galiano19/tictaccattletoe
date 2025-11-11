@@ -18,7 +18,7 @@ export default function WeatherInfo() {
 
   if (isLoading || isWeatherLoading) {
     return (
-      <div className={styles.Wrapper}>
+      <div className={styles.wrapper}>
         <Loader />
       </div>
     );
@@ -28,26 +28,26 @@ export default function WeatherInfo() {
   console.log("Weather data:", weatherData);
 
   return (
-    <div className={styles.Wrapper}>
-      <div className={styles.Header}>
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
         <span>
           Weather Info for <i>{weatherData?.location}</i>
         </span>
         <LocationSelector onLocationChange={setLocation} />
       </div>
-      <div className={styles.Body}>
-        <div className={styles.IconWrapper}>
+      <div className={styles.body}>
+        <div className={styles.iconWrapper}>
           <Image
             src={"https:" + weatherData?.condition.icon}
             alt={weatherData?.condition.text || "Weather Icon"}
             width={64}
             height={64}
           />
-          <p className={styles.Condition}>{weatherData?.condition.text}</p>
+          <p className={styles.condition}>{weatherData?.condition.text}</p>
         </div>
-        <div className={styles.DataWrapper}>
-          <p className={styles.Temperature}>{weatherData?.temperatureC}°C</p>
-          <p className={styles.Humidity}>Humidity: {weatherData?.humidity}%</p>
+        <div className={styles.dataWrapper}>
+          <p className={styles.temperature}>{weatherData?.temperatureC}°C</p>
+          <p className={styles.humidity}>Humidity: {weatherData?.humidity}%</p>
         </div>
       </div>
     </div>

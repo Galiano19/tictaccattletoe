@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { GameState, INITIAL_BOARD } from "../types/game";
+import { GameState, INITIAL_BOARD } from "@/lib/types/game";
 
 type GameStateContextType = {
   gameState: GameState;

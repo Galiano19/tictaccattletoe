@@ -1,9 +1,9 @@
-import { blockingMove } from "../../app/utils/blockingMove";
+import { blockingMove } from "../../lib/utils/blockingMove";
 import {
   BoardState,
   GameState,
   WINNING_COMBINATIONS,
-} from "../../app/types/game";
+} from "../../lib/types/game";
 
 describe("blockingMove", () => {
   let mockSetGameState: jest.Mock;

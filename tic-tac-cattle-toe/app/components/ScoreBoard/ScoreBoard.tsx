@@ -2,7 +2,7 @@ import { useGameStats } from "@/app/hooks/useGameStats";
 import { useGameState } from "@/app/providers/GameStateProvider";
 import { useEffect, useRef } from "react";
 import styles from "./ScoreBoard.module.css";
-import { resetGame } from "@/app/utils/resetGame";
+import { resetGame } from "@/lib/utils/resetGame";
 
 export default function ScoreBoard() {
   const { wins, losses, draws, updateStats } = useGameStats();
@@ -32,32 +32,32 @@ export default function ScoreBoard() {
   }, [gameState, updateStats]);
 
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.wrapper}>
       <div
-        className={`${styles.Stat} ${
-          gameState.winner === "X" ? styles.Win : ""
+        className={`${styles.stat} ${
+          gameState.winner === "X" ? styles.win : ""
         }`}
       >
-        <div className={styles.Label}>Wins</div>
-        <div className={styles.Value}>{wins}</div>
+        <div className={styles.label}>Wins</div>
+        <div className={styles.value}>{wins}</div>
       </div>
       <div
-        className={`${styles.Stat} ${
-          gameState.winner === "O" ? styles.Lose : ""
+        className={`${styles.stat} ${
+          gameState.winner === "O" ? styles.lose : ""
         }`}
       >
-        <div className={styles.Label}>Losses</div>
-        <div className={styles.Value}>{losses}</div>
+        <div className={styles.label}>Losses</div>
+        <div className={styles.value}>{losses}</div>
       </div>
       <div
-        className={`${styles.Stat} ${
-          gameState.gameStatus === "draw" ? styles.Draw : ""
+        className={`${styles.stat} ${
+          gameState.gameStatus === "draw" ? styles.draw : ""
         }`}
       >
-        <div className={styles.Label}>Draws</div>
-        <div className={styles.Value}>{draws}</div>
+        <div className={styles.label}>Draws</div>
+        <div className={styles.value}>{draws}</div>
       </div>
-      <button className={styles.ResetBtn} onClick={handleResetGame}>
+      <button className={styles.resetBtn} onClick={handleResetGame}>
         Reset Game
       </button>
     </div>

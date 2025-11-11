@@ -1,11 +1,11 @@
-import { BoardState, GameState, Player } from "@/app/types/game";
+import { BoardState, GameState, Player } from "@/lib/types/game";
 import {
   checkGameCompletion,
   isBoardFull,
   isGameOver,
   setDraw,
   setGameOver,
-} from "@/app/utils/gameOver";
+} from "@/lib/utils/gameOver";
 
 describe("isGameOver", () => {
   const createGameState = (board: BoardState): GameState => ({

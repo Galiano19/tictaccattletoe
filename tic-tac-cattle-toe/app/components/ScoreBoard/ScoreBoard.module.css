@@ -1,5 +1,5 @@
 
-.Wrapper{
+.wrapper{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.Stat, .ResetBtn {
+.stat, .resetBtn {
   text-align: center;
   padding: 8px;
   height: 60px;
@@ -28,7 +28,7 @@
   width: 80px;
   }
 
-  &.Win {
+  &.win {
     box-shadow:
     inset 0 0 10px #fff,
     inset 20px 0 80px rgba(0, 128, 0, 0.7),
@@ -39,7 +39,7 @@
     -10px 0 80px rgba(0, 128, 0, 0.7),
     10px 0 80px rgba(0, 128, 0, 0.7);
   }
-  &.Lose {
+  &.lose {
     box-shadow:
     inset 0 0 10px #fff,
     inset 20px 0 80px rgba(255, 0, 0, 0.7),
@@ -50,7 +50,7 @@
     -10px 0 80px rgba(255, 0, 0, 0.7),
     10px 0 80px rgba(255, 0, 0, 0.7);
   }
-  &.Draw {
+  &.draw {
     box-shadow:
     inset 0 0 10px #fff,
     inset 20px 0 80px rgba(128, 128, 128, 0.7),   
@@ -63,7 +63,7 @@
   }
 }
 
-.ResetBtn {
+.resetBtn {
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -72,11 +72,11 @@
   }
 }
 
-.Label {
+.label {
   font-size: 0.9rem;
   text-transform: uppercase;
 }
-.Value {
+.value {
   font-size: 1.5rem;
   font-weight: bold;
 }

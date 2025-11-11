@@ -1,4 +1,4 @@
-.Wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.Header {
+.header {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-.Body {
+.body {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -28,20 +28,20 @@
   width: 100%;
 }
 
-.DataWrapper {
+.dataWrapper {
   text-align: end;
 }
 
-.Temperature {
+.temperature {
   font-weight: bold;
   font-size: 2rem;
 }
-.Condition {
+.condition {
   text-transform: capitalize;
   font-size: 0.7rem;
   margin-top: -8px;
 }
-.Location {
+.location {
   font-size: 0.7rem;
   font-weight: bold;
   margin-bottom: 4px;

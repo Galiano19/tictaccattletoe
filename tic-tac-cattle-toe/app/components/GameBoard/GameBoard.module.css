@@ -22,7 +22,7 @@
   transition: all 0.2s ease;
 }
 
-.WinningCell {
+.winningCell {
   background-color: rgba(0, 0, 0, 0.7);
   transform: scale(1.05);
 }

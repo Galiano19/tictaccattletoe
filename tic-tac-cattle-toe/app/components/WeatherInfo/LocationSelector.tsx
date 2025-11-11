@@ -18,12 +18,12 @@ export default function LocationSelector({
   return (
     <Dropdown>
       <DropdownTrigger>
-        <button className={styles.Trigger}>
+        <button className={styles.trigger}>
           <i>Select Location</i> <AiFillEdit />
         </button>
       </DropdownTrigger>
       <DropdownMenu
-        className={styles.Wrapper}
+        className={styles.wrapper}
         disallowEmptySelection
         aria-label='Dynamic Actions'
         variant='flat'
