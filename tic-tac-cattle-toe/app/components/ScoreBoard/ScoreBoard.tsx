@@ -2,7 +2,7 @@ import { useGameStats } from "@/app/hooks/useGameStats";
 import { useGameState } from "@/app/providers/GameStateProvider";
 import { useEffect, useRef } from "react";
 import styles from "./ScoreBoard.module.css";
-import { resetGame } from "@/app/utils/resetGame";
+import { resetGame } from "@/lib/utils/resetGame";
 
 export default function ScoreBoard() {
   const { wins, losses, draws, updateStats } = useGameStats();

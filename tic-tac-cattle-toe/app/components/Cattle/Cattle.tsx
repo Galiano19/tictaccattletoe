@@ -1,7 +1,7 @@
 import Image from "next/image";
 import cattlePic from "./cattle.png";
 import styles from "./Cattle.module.css";
-import { contentStrings } from "./content";
+import { contentStrings } from "@/lib/constants/content";
 import { useState } from "react";
 
 function Content({ children }: { children: string }) {
