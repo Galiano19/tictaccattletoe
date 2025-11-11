@@ -22,7 +22,7 @@ export default function GameBoard({
           className={`${
             gameState.gameStatus === "over" &&
             gameState.winningLine?.includes(index)
-              ? styles.WinningCell
+              ? styles.winningCell
               : ""
           } ${styles.cell}`}
           onClick={() => onCellClick(index)}
