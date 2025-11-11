@@ -1,0 +1,83 @@
+
+.Wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 16px;
+  justify-content: center;
+}
+
+.Stat, .ResetBtn {
+  text-align: center;
+  padding: 8px;
+  height: 60px;
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: var(--cell-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 500px) {
+    height: 80px;
+  width: 80px;
+  }
+
+  &.Win {
+    box-shadow:
+    inset 0 0 10px #fff,
+    inset 20px 0 80px rgba(0, 128, 0, 0.7),
+    inset -20px 0 80px rgba(0, 128, 0, 0.7),
+    inset 20px 0 300px rgba(0, 128, 0, 0.7),
+    inset -20px 0 300px rgba(0, 128, 0, 0.7),
+    0 0 10px #fff,
+    -10px 0 80px rgba(0, 128, 0, 0.7),
+    10px 0 80px rgba(0, 128, 0, 0.7);
+  }
+  &.Lose {
+    box-shadow:
+    inset 0 0 10px #fff,
+    inset 20px 0 80px rgba(255, 0, 0, 0.7),
+    inset -20px 0 80px rgba(255, 0, 0, 0.7),
+    inset 20px 0 300px rgba(255, 0, 0, 0.7),
+    inset -20px 0 300px rgba(255, 0, 0, 0.7),
+    0 0 10px #fff,
+    -10px 0 80px rgba(255, 0, 0, 0.7),
+    10px 0 80px rgba(255, 0, 0, 0.7);
+  }
+  &.Draw {
+    box-shadow:
+    inset 0 0 10px #fff,
+    inset 20px 0 80px rgba(128, 128, 128, 0.7),   
+    inset -20px 0 80px rgba(128, 128, 128, 0.7),  
+    inset 20px 0 300px rgba(128, 128, 128, 0.7),  
+    inset -20px 0 300px rgba(128, 128, 128, 0.7), 
+    0 0 10px #fff,
+    -10px 0 80px rgba(128, 128, 128, 0.7),
+    10px 0 80px rgba(128, 128, 128, 0.7);         
+  }
+}
+
+.ResetBtn {
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.Label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.Value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
