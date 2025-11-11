@@ -19,7 +19,12 @@ export default function GameBoard({
       {gameState.board.map((cell, index) => (
         <button
           key={index}
-          className={styles.cell}
+          className={`${
+            gameState.gameStatus === "over" &&
+            gameState.winningLine?.includes(index)
+              ? styles.WinningCell
+              : ""
+          } ${styles.cell}`}
           onClick={() => onCellClick(index)}
           disabled={disabled || cell !== null}
         >

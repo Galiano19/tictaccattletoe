@@ -22,6 +22,11 @@
   transition: all 0.2s ease;
 }
 
+.WinningCell {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
 .cell:hover:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.7);
   transform: scale(1.05);
