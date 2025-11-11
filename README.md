@@ -10,7 +10,7 @@
 
 ## 🚀 Live Demo
 
-**[Play the Game →](https://tic-tac-cattle-toe.vercel.app)**
+**[Play the Game →](https://tictaccattletoe.vercel.app/)**
 
 ## 📋 Project Overview
 
@@ -208,7 +208,7 @@ This project demonstrates proficiency in:
 
 <div align="center">
 
-**🎮 [Start Playing Now!](https://tic-tac-cattle-toe.vercel.app) 🎮**
+**🎮 [Start Playing Now!](https://tictaccattletoe.vercel.app/) 🎮**
 
 _Built with ❤️ and ☕ by [Galiano19](https://github.com/Galiano19)_
 
